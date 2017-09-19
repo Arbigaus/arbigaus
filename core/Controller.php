@@ -11,6 +11,7 @@ class Controller {
 	}
 
 	public function loadTemplate($viewName, $viewData = array()){
+		$count_client = Clients::CountClients();
 		include 'views/template.php';
 	}
 

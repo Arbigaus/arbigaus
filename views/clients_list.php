@@ -1,6 +1,10 @@
 <div class="container-fluid">
 <h2>Client List</h2>
 
+<div class="col-md-4 col-md-offset-4 alert ">
+	<div class="result"></div>
+</div>
+
 	<div class="col-md-6 col-md-offset-3">
 		<table class="table table-stripped table-bordered">
 			<thead>
@@ -18,8 +22,8 @@
 					<td><?php echo $client_name; ?></td>
 					<td><?php echo $client_genre; ?></td>
 					<td>
-						<a class="btn btn-default" href="<?php echo BASE_URL."/clients/edit/".$id_client; ?>"><span class="glyphicon glyphicon-edit"></span></a>
-						<a class="btn btn-danger" href="<?php echo BASE_URL."/clients/del/".$id_client; ?>"><span class="glyphicon glyphicon-trash"></span></a>
+						<a class="btn btn-default" href="<?php echo BASE."/clients/edit/".$id_client; ?>"><em class="fa fa-edit"></em></a>
+						<a class="btn btn-danger remover" id="<?php echo $id_client; ?>" rel="clients/del/" href="#"><em class="fa fa-trash"></em></a>
 						</td>
 				</tr>
 				<?php endforeach; ?>
@@ -30,6 +34,6 @@
 			<?php endif; ?>
 			</tbody>
 		</table>
-		<a class="btn btn-default" href="<?php echo BASE_URL; ?>/clients/add"><span class="glyphicon glyphicon-plus"> Adicionar</span></a>
+		<a class="btn btn-default" href="<?php echo BASE; ?>/clients/add"><span class="fa fa-plus"> Adicionar</span></a>
 	</div>
 </div>

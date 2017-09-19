@@ -1,7 +1,11 @@
 <div class="container-fluid">
 <h2>Add Client</h2>
 
-<form method="POST">
+<div class="col-md-4 col-md-offset-4 alert ">
+	<div class="result"></div>
+</div>
+
+<form method="POST" id="clients/add_ajax">
 	<div class="col-md-4 col-md-offset-4">
 		<div class="form-group">
 			<input type="text" name="client_name" class="form-control">
@@ -15,7 +19,9 @@
 		</select>
 	</div>
 	<div class="form-group">
-		<input type="submit" value="Enviar" class="btn btn-primary">
+		<button class="btn btn-success">
+			<i class="i-send fa "></i> Atualizar <i class="fa"></i>
+		</button>
 	</div>
 	</div>
 

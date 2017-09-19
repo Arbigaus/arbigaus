@@ -1,7 +1,7 @@
 <?php
 require 'environment.php';
 
-define("BASE_URL", "http://mvc.pc");
+define("BASE", "http://mvc.pc");
 global $config;
 $config = array();
 if(ENVIRONMENT == "development") {

@@ -60,18 +60,14 @@ abstract class Model {
 
 	public static function ReadAll(){
 		try {
-
 			$tableName = static::$Table;
-
 			$stmt = self::DB()->prepare("SELECT * FROM {$tableName}");
-
 			$stmt->execute();
 
 			if($stmt->rowCount() > 0):
 				self::$Result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				return self::$Result;
 			endif;
-
 
 		} catch (PDOException $e) {
 			die($e->getMessage());
@@ -80,19 +76,16 @@ abstract class Model {
 
 	public static function ReadByField(string $field,$value){
 		try {
-
 			$tableName = static::$Table;
 
 			$stmt = self::DB()->prepare("SELECT * FROM {$tableName} WHERE {$field} = :value");
 			$stmt->bindValue(":value",$value);
-
 			$stmt->execute();
 
 			if($stmt->rowCount() > 0):
 				self::$Result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				return self::$Result;
 			endif;
-
 
 		} catch (PDOException $e) {
 			die($e->getMessage());
@@ -109,7 +102,6 @@ abstract class Model {
 			endforeach;
 
 			$fields = implode(',',$fields);
-
 			$stmt = self::DB()->prepare("UPDATE {$tableName} SET {$fields} WHERE {$cod_pk} = :id");
 			// print_r($stmt);die;
 
@@ -138,7 +130,6 @@ abstract class Model {
 
 			$stmt = self::DB()->prepare("DELETE FROM {$tableName} WHERE {$cod_pk} = :value");
 			$stmt->bindValue(":value",$id);
-
 			$stmt->execute();
 
 			if($stmt->rowCount() == 1):
