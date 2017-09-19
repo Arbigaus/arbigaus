@@ -16,7 +16,7 @@ class clientsController extends Controller{
 		$this->loadTemplate("clients_add",$data);
 
 	}
-
+// TODO: Adicionar via Ajax.
 	public function add_ajax(){
 		$data = array();
 
@@ -75,7 +75,7 @@ class clientsController extends Controller{
 
 	public function del($id){
 		$data = array();
-		
+
 		if(isset($_POST['id'])):
 			$id = $_POST['id'];
 			Clients::Delete("id_client",$id);
