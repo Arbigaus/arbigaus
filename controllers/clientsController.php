@@ -52,6 +52,7 @@ class clientsController extends Controller{
 		$this->loadTemplate("clients_edit",$data);
 	}
 
+// TODO: Editar via Ajax.
 	public function edit_ajax(){
 		$data = array();
 
