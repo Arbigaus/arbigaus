@@ -8,29 +8,49 @@ class homeController extends Controller {
 	public function index(){
 		$data = array();
 
-		// $dados_clientes = array(
-		// 	"name" => 'Fernando Arbigaus',
-		// 	"sexo" => 'masculino'
-		// 	);
+		$pagina = filter_input(INPUT_GET, 'clients');
+		$pagina = (isset($pagina)?(int)$pagina:1);
+		$max_pag = 2;
+		$inicio = (($max_pag * $pagina) - $max_pag);
 
-		// Clientes::Create($dados_clientes);
+		$Query = "SELECT * FROM tab_clients ORDER BY id_client ASC LIMIT $inicio,$max_pag";
+		Clients::FullRead($Query);
 
-		// if(Clientes::getResult()):
-		// 	echo "O último cliente foi ".Clientes::getResult();
-		// endif;
+		echo "<pre>";
+		print_r(Clients::getResult());
+		echo "</pre>";
 
-		// echo "<pre>";
-		// print_r(Clientes::ReadByField('id_cliente', 1));
-		// print_r(Clientes::ReadAll());
+		$Query = "SELECT COUNT(*) AS Total FROM tab_clients";
+		Clients::FullRead($Query);
 
-		// Clientes::Update($dados_clientes,'id_cliente',2);
+		$total_registro = Clients::getResult()[0]['Total'];
+		$maxlinks = 2;
+		$total_paginas = ceil($total_registro / $max_pag);
 
+//	Primeiro 1 2 3 4 5 Ultimo
+		if($total_registro > $max_pag){
+			if($pagina != 1){
+				echo '<a href="?clients=1">Primeira Página</a>';
+			}
+			// TODO: Imprimindo paginação, duas antes da página atual.
+			for($i = $pagina - $maxlinks; $i <= $pagina - 1; $i++){
+				if($i >= 1){
+					echo '<a href="?clients='.$i.'">'.$i.'</a>';
+				}
+			}
+			// Imprimir página atual
+			echo '<span>'.$pagina.'</span>';
 
-		// Clientes::Delete("id_cliente",2);
-		
-		// $teste = array("id_cliente" => 3);
-
-		// print_r(Clientes::FullRead("SELECT * FROM tab_clientes WHERE id_cliente = :id_cliente", $teste));
+			for ($i = $pagina + 1; $i <= $pagina + $maxlinks ; $i++) {
+				if($i <= $total_paginas){
+					echo '<a href="?clients='.$i.'">'.$i.'</a>';
+				}
+			}
+			// Imprimir última página
+			if($pagina != $total_paginas){
+				echo '<a href="?clients='.$total_paginas.'">Última Página</a>';
+			}
+		}
 
 		$this->loadTemplate('home', $data);
 
