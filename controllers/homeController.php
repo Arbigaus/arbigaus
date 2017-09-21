@@ -11,6 +11,10 @@ class homeController extends Controller {
 		$data['lista'] = Pagination::createPagination();
 		$data['links'] = Pagination::createLinks();
 
+		// echo "<pre>";
+		// print_r($data['links']);
+		// echo "</pre>";die;
+
 
 		$this->loadTemplate('home', $data);
 

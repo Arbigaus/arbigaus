@@ -122,6 +122,7 @@ class Pagination extends Model {
       	if($total_registro > self::getMaxPerPage()){
   			if(self::getPager() > 1){
   				$links[] = '<ul class="pagination"><li><a href="?'.self::getPage().'=1">Primeira Página</a></li>';
+        // $links[] = self::getPage()."=1";
   			}else{
           $links[] = '<ul class="pagination">';
         }
@@ -129,14 +130,17 @@ class Pagination extends Model {
   			for($i = self::getPager() - self::getMaxLinks(); $i <= self::getPager() - 1; $i++){
   				if($i >= 1){
   					$links[] = '<li><a href="?'.self::getPage().'='.$i.'">'.$i.'</a></li>';
+            // $links[] = self::getPage()."=".$i;
   				}
   			}
   			// Imprimir página atual
   			$links[] = '<li class="active"><span>'.self::getPager().'</span>';
+        // $links[] = self::getPager();
 
   			for ($i = self::getPager() + 1; $i <= self::getPager() + self::getMaxLinks() ; $i++) {
   				if($i <= $total_paginas){
   					$links[] = '<li><a href="?'.self::getPage().'='.$i.'">'.$i.'</a></li>';
+            // $links[] = self::getPage().'='.$i;
   				}
   			}
   			// Imprimir última página
