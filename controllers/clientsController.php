@@ -2,7 +2,7 @@
 class clientsController extends Controller{
 
 	public function index(){
-		$data = array();
+		$data = [];
 
 		Clients::ReadAll();
 		$data['list_client'] = Clients::getResult();

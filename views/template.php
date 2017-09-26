@@ -17,7 +17,7 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="<?php echo BASE; ?>">MVC Home</a>
 			</div>
-		
+
 			<ul class="nav navbar-nav navbar-left">
 				<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"> Clients</span> <span class="caret"></span></a>
@@ -26,6 +26,7 @@
 						<li><a href="<?php BASE ?>/clients/add"><span class="fa fa-plus"></span> Add Client</a></li>
 					</ul>
 				</li>
+        <li><a href="<?php BASE ?>/cidades"><span class="fa fa-building-o"> Cidades</span></a></li>
 
 			</ul>
 
@@ -52,7 +53,7 @@
 	<?php $this->loadViewInTemplate($viewName, $viewData); ?>
 
 	<!-- End Load View -->
-	
+
 </body>
 
 </html>

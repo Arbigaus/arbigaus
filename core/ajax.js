@@ -85,8 +85,34 @@ $(function(){
 		});
 		return false;
 	});
+	//Fim do método de exclusão
+
+	//Método change do select box Extado
+	$(".estado").on("change", function(){
+		var ca = $(this).attr('id');
+		var estado = $(this).val();
+
+		$.ajax({
+			url:BASE + ca,
+			data:{estado: estado},
+			type:'POST',
+			dataType:'json',
+			beforeSend: function(data){
+				$(".cidade").html("<option value='' selected=''>Atualizando cidades...</option>");
+			},//fim do beforeSend.
+			success: function(data){
+				$(".cidade").html("<option value='' selected=''>Selecione a Cidade...</option>");
+				if(data.lista_cidades){
+					$.each(data.lista_cidades, function (key, value){
+						$(".cidade").append("<option value='"+value['cod_cidades']+"'>"+value['nome']+"</option>");
+					});
+				}
+
+			}//fim do success;
+		}); //Fim da chamada do Ajax.
 
 
+	});//Fim do método Change do SelectBox
 
 
 
