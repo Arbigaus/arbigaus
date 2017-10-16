@@ -1,2 +1,2 @@
-<?php 
-define("ENVIRONMENT", "development");
+<?php
+define("ENVIRONMENT", "");

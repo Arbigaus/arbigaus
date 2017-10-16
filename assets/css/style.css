@@ -1,0 +1,54 @@
+html, body {
+	font-family: 'Ubuntu', sans-serif;
+	background-color: #37474f;
+	width: 100%;
+	height: 100%;
+}
+.bg1 {
+	width: 100%;
+	height: 700px;
+	margin: auto;
+	background: url(/assets/img/bg.jpg) no-repeat 50% 50%;
+	top: 0;
+	display: table;
+	background-size: cover;
+}
+.logo {
+	margin-top: 20px;
+}
+.text-home {
+	margin-top: 140px;
+}
+.title-home {
+	text-align: right;
+}
+.citacao {
+	padding-right: 15px;
+}
+.title-home p {
+	font-size: 12px;
+	border-right: solid 5px #fff;
+}
+.infos{
+	background-color: white;
+	margin-top: -100px;
+	height: 550px;
+	padding: 40px;
+}
+
+.tabs .indicator{
+	background-color: #2a343e;
+}
+
+.tabs li a h5{
+	color: #2a343e;
+	text-align: left;
+}
+
+.tabs li a h5:hover{
+	color: #263238;
+}
+
+.contato ul li img {
+	margin-top: 15px;
+}

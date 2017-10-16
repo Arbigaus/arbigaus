@@ -1,6 +1,6 @@
 $(function(){
 
-	var BASE = "http://mvc.pc/";
+	var BASE = "http://arbigaus.com/";
 	var alerts = ["alert-info","alert-warning","alert-success","alert-danger"];
 
 	$('form').submit(function(){
