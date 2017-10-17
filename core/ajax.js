@@ -1,7 +1,7 @@
 $(function(){
 
-	var BASE = "http://arbigaus.com/";
-	var alerts = ["alert-info","alert-warning","alert-success","alert-danger"];
+	var BASE = "http://arbigaus.pc/";
+	var alerts = ["card-panel teal lighten-2","card-panel white-text","card-panel yellow","red-text"];
 
 	$('form').submit(function(){
 
@@ -17,19 +17,26 @@ $(function(){
 			processData: false,
 			contentType: false,
 			beforeSend: function(data){
-				$(".i-send").addClass("fa-spinner fa-spin");
+				// $(".i-send").addClass("fa-spinner fa-spin");
+
+				$(".barra-progresso").addClass("progress");
+				$(".tipo-progresso").addClass("indeterminate");
 
 				$.each(alerts, function(key,value){
 					$(".alert").removeClass(value);
+					$(".alert").html("");
 				});
 			},
 			success: function(data){
-				$(".i-send").removeClass("fa-spinner fa-spin");
+				$(".barra-progresso").removeClass("progress");
+				$(".tipo-progresso").removeClass("indeterminate");
+				console.log(data.return);
 
 				if(data.return){
 					$('.alert').addClass(data.return[0]);
 					$('.result').html(data.return[1]);
 					$('.count_client').html(data.count_client);
+					$('.clear').val("");
 				}
 
 				if(data.redirect){

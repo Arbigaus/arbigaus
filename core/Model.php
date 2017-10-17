@@ -49,7 +49,6 @@ abstract class Model {
 
 			if($stmt->rowCount() == 1):
 				self::$Result = self::DB()->lastInsertId();
-				return self::$Result;
 			endif;
 
 
