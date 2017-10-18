@@ -18,16 +18,19 @@ class homeController extends Controller {
 
 
 		if(empty($dados_form['name'])):
-			$data['return'] = ["card-panel yellow red-text","Preencha o nome."];
+			$data['return'] = ["card-panel yellow red-text","Favor preencha o nome."];
+
+		elseif(empty($dados_form['phone'])):
+			$data['return'] = ["card-panel yellow red-text","Favor preencha o telefone."];
 
 		elseif(empty($dados_form['email'])):
-			$data['return'] = ["card-panel yellow red-text","Preencha o e-mail."];
+			$data['return'] = ["card-panel yellow red-text","Favor preencha o e-mail."];
 
 		elseif(empty($dados_form['subject'])):
-			$data['return'] = ["card-panel yellow red-text","Preencha o assunto."];
+			$data['return'] = ["card-panel yellow red-text","Favor preencha o assunto."];
 
 		elseif(empty($dados_form['message'])):
-			$data['return'] = ["card-panel yellow red-text","Preencha a mensagem."];
+			$data['return'] = ["card-panel yellow red-text","Favor preencha a mensagem."];
 
 		else:
 

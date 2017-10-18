@@ -1,2 +1,2 @@
 <?php
-define("ENVIRONMENT", "environment");
+define("ENVIRONMENT", "");
