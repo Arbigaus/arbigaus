@@ -7,6 +7,7 @@ class homeController extends Controller {
 
 	public function index(){
 		$data = array();
+
 		$this->loadView('home', $data);
 	}
 
@@ -15,8 +16,6 @@ class homeController extends Controller {
 
 		$dados_form = filter_input_array(INPUT_POST,FILTER_SANITIZE_MAGIC_QUOTES);
 
-
-		// $data['return'] = ["card-panel yellow red-text","teste"];
 
 		if(empty($dados_form['name'])):
 			$data['return'] = ["card-panel yellow red-text","Preencha o nome."];
@@ -31,6 +30,7 @@ class homeController extends Controller {
 			$data['return'] = ["card-panel yellow red-text","Preencha a mensagem."];
 
 		else:
+
 			$dados_form['date'] = date("Y-m-d H-m-s");
 			Contato::Create($dados_form);
 
@@ -41,7 +41,8 @@ class homeController extends Controller {
 				$data['return'] = ["card-panel teal lighten-2 white-text","Não entrou no if"];
 			endif;
 		endif;
-			echo json_encode($data);die;
+
+		echo json_encode($data);die;
 
 	}
 }

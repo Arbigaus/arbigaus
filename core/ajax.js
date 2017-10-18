@@ -1,6 +1,6 @@
 $(function(){
 
-	var BASE = "http://arbigaus.pc/";
+	var BASE = window.location.href;
 	var alerts = ["card-panel teal lighten-2","card-panel white-text","card-panel yellow","red-text"];
 
 	$('form').submit(function(){

@@ -34,7 +34,7 @@ abstract class Model {
 
 	public static function Create(array $Fields){
 		try {
-
+			// var_dump($Fields);die;
 			$tableName = static::$Table;
 			$fields = implode(',',array_keys($Fields));
 			$values = ':'.implode(',:',array_keys($Fields));

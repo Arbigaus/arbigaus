@@ -20,11 +20,11 @@
         <a href="http://arbigaus.com"><img src="<?php echo BASE; ?>/assets/img/logo.png" alt="Logo"></a>
       </div>
       <div class="row container text-home">
-        <div class="white-text col s6 offset-s6 title-home">
+        <div class="white-text col s10 offset-s2 m6 offset-m6 title-home">
           <h4>O desing focado na beleza e usabilidade</h4>
           <div class="row">
             <div class="citacao">
-              <p class="col s8 offset-s4">"Se o teu cliente precisa perguntar como funciona o sistema, o sistema não é funcional como deveria"</p>
+              <p class="col s9 offset-s3">"Se o teu cliente precisa perguntar como funciona o sistema, o sistema não é funcional como deveria"</p>
             </div>
           </div>
         </div>
@@ -90,15 +90,18 @@
           </ul>
         </div>
 
-        <form class="" id="home/send_email" method="post">
-          <div class="col s8">
+        <form id="home/send_email" method="post">
+          <div class="col s12 m8">
             <div class="row">
               <div class="result alert "></div>
-              <div class="input-field col s12 m6">
+              <div class="input-field col s12">
                 <input class="clear" type="text" name="name" placeholder="Nome">
               </div>
               <div class="input-field col s12 m6">
-                <input class="clear" type="text" name="email" placeholder="E-mail">
+                <input class="clear" type="text" name="phone" id="phone" placeholder="Telefone">
+              </div>
+              <div class="input-field col s12 m6">
+                <input class="clear" type="email" name="email" placeholder="E-mail">
               </div>
               <div class="input-field col s12">
                 <input class="clear" type="text" name="subject" placeholder="Assunto">
@@ -110,7 +113,7 @@
             <div class="barra-progresso ">
               <div class="tipo-progresso "></div>
             </div>
-            <button type="submit" name="button" class="btn waves-effect waves-light right"><i class="material-icons right">send</i>Enviar</button>
+            <button type="submit" class="btn waves-effect waves-light right"><i class="material-icons right">send</i>Enviar</button>
 
           </div>
         </form>
@@ -125,4 +128,6 @@
  <script src="<?php echo BASE; ?>/assets/js/jquery-3.2.1.min.js"></script>
  <script src="<?php echo BASE; ?>/core/ajax.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
+ <script src="<?php echo BASE ?>/assets/js/script.js"></script>
 </html>
